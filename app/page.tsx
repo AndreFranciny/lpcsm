@@ -142,7 +142,7 @@ export default function FabricaDeReceitasPageCreative() {
               </div>
               <div>
                 <RegistrationForm
-                  title="Garanta Sua Vaga Agora"
+                  title="Garanta sua Vaga"
                   description="Vagas limitadas. Acelere seu crescimento."
                   buttonText="QUERO TER UMA FÁBRICA DE RECEITA"
                   idPrefix="hero"
@@ -315,22 +315,30 @@ export default function FabricaDeReceitasPageCreative() {
             A decisão de transformar seu negócio é sua. Nós te damos o incentivo para começar.
           </SectionText>
 
-          <div className="my-12 bg-brand-accent-red text-brand-text-primary p-8 rounded-xl text-center max-w-3xl mx-auto shadow-2xl red-glow-hover transition-all duration-300">
-            <h3 className="text-3xl font-bold mb-2">OFERTA EXCLUSIVA POR TEMPO LIMITADO!</h3>
-            <p className="text-xl">Feche a continuidade em até 7 dias após o evento e ganhe:</p>
-            <p className="text-3xl font-extrabold text-yellow-300 mt-2">1 MÊS DE BÔNUS NO PLANO DE IMPLEMENTAÇÃO</p>
-            <p className="text-lg mt-1">(Valor: Até R$ 15.000)</p>
-          </div>
+          {/* Novo container de grade */}
+          <div className="mt-12 grid md:grid-cols-2 gap-12 items-center">
+            {/* Coluna da Esquerda: Oferta e Countdown */}
+            <div className="space-y-8 text-left md:text-center">
+              {" "}
+              {/* Adicionado text-left md:text-center para melhor alinhamento interno */}
+              <div className="bg-brand-accent-red text-brand-text-primary p-8 rounded-xl shadow-2xl red-glow-hover transition-all duration-300">
+                <h3 className="text-3xl font-bold mb-2">OFERTA EXCLUSIVA POR TEMPO LIMITADO!</h3>
+                <p className="text-xl">Feche a continuidade em até 7 dias após o evento e ganhe:</p>
+                <p className="text-3xl font-extrabold text-yellow-300 mt-2">1 MÊS DE BÔNUS NO PLANO DE IMPLEMENTAÇÃO</p>
+                <p className="text-lg mt-1">(Valor: Até R$ 15.000)</p>
+              </div>
+              <CountdownTimer targetDate={eventDate} className="max-w-xl mx-auto" />
+            </div>
 
-          <CountdownTimer targetDate={eventDate} className="max-w-xl mx-auto mb-12" />
-
-          <div className="max-w-2xl mx-auto">
-            <RegistrationForm
-              title="Garanta Sua Vaga e Sua Oferta"
-              description="Preencha abaixo para garantir sua participação e bônus."
-              buttonText="QUERO TER UMA FÁBRICA DE RECEITA"
-              idPrefix="final"
-            />
+            {/* Coluna da Direita: Formulário */}
+            <div>
+              <RegistrationForm
+                title="Garanta sua Vaga"
+                description="Preencha abaixo para garantir sua participação e bônus."
+                buttonText="QUERO TER UMA FÁBRICA DE RECEITA"
+                idPrefix="final"
+              />
+            </div>
           </div>
         </div>
       </AnimatedSection>
